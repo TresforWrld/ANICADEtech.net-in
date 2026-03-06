@@ -1,160 +1,643 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>THYNK UNLIMITED</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANICADE TECH | Digital Innovation </title>
+    <style>
+        /* ===== RESET & GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        body {
+            background: #0B1C2D;
+            color: #F5F7FA;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{background:#050505;color:#fff;line-height:1.5;}
-    /* NAVBAR */
-    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 6%;background:#000;border-bottom:1px solid #0ff;}
-    nav h1 a{color:#0ff;text-decoration:none;font-weight:700;}
-    nav .nav-links a{color:#fff;margin-left:22px;text-decoration:none;transition:0.25s;}
-    nav .nav-links a:hover{color:#0ff;}
-    /* HERO */
-    .hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(circle,#001a1a,#000);padding:0 20px;}
-    .hero h2{font-size:3rem;color:#0ff;letter-spacing:1px;}
-    .hero p{margin:15px 0;opacity:0.85;max-width:900px;}
-    .btn{display:inline-block;padding:12px 30px;background:#0ff;color:#000;text-decoration:none;border-radius:30px;font-weight:700;transition:0.25s;border:none;cursor:pointer;}
-    .btn:hover{box-shadow:0 0 18px #0ff;transform:translateY(-2px);}
-    /* SECTIONS */
-    section{padding:80px 6%;}
-    .section-title{text-align:center;margin-bottom:40px;color:#0ff;}
-    /* CARDS */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
-    .card{background:#0a0a0a;padding:22px;border:1px solid #0ff;border-radius:12px;transition:0.25s;cursor:pointer;color:#fff;text-decoration:none;display:block;height:100%;}
-    .card:hover{transform:translateY(-8px);box-shadow:0 0 20px #0ff;}
-    .card h3{margin-bottom:8px;}
-    /* CTA */
-    .cta{text-align:center;background:#001a1a;padding:60px 6%;}
-    /* FOOTER */
-    footer{text-align:center;padding:30px;border-top:1px solid #0ff;margin-top:40px;opacity:0.85;}
-    footer a{color:#0ff;text-decoration:none;}
-    /* small screens */
-    @media(max-width:768px){.hero h2{font-size:2.2rem;} nav{padding:16px 4%;} section{padding:50px 4%;}}
-    /* accessible focus styles */
-    a:focus, button:focus {outline:3px solid rgba(0,255,255,0.25);outline-offset:3px;}
-  </style>
+        /* ===== ANIMATED BACKGROUND RINGS (LIT EFFECT) ===== */
+        .background-rings {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .background-rings i {
+            position: absolute;
+            border: 3px solid transparent;
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: floatRotate 20s linear infinite, glowShift 12s infinite alternate;
+            box-shadow: 0 0 50px currentColor;
+            opacity: 0.5;
+        }
+
+        .background-rings i:nth-child(1) {
+            width: 90vmax;
+            height: 90vmax;
+            top: -20vmax;
+            left: -20vmax;
+            filter: blur(10px);
+            animation-duration: 25s, 14s;
+        }
+
+        .background-rings i:nth-child(2) {
+            width: 100vmax;
+            height: 100vmax;
+            bottom: -30vmax;
+            right: -30vmax;
+            border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+            filter: blur(15px);
+            animation-duration: 30s, 18s;
+            animation-delay: -5s, -2s;
+        }
+
+        .background-rings i:nth-child(3) {
+            width: 80vmax;
+            height: 80vmax;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 45% 55% 65% 35% / 55% 45% 55% 45%;
+            filter: blur(20px);
+            animation-duration: 35s, 22s;
+            animation-delay: -10s, -5s;
+        }
+
+        @keyframes floatRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes glowShift {
+            0% { border-color: #ff8c00; box-shadow: 0 0 60px #ff8c00; }      /* orange */
+            20% { border-color: #94A3B8; box-shadow: 0 0 60px #94A3B8; }    /* grey */
+            40% { border-color: #ff4d4d; box-shadow: 0 0 60px #ff4d4d; }    /* red */
+            60% { border-color: #00BFFF; box-shadow: 0 0 60px #00BFFF; }    /* electric */
+            80% { border-color: #C6A85C; box-shadow: 0 0 60px #C6A85C; }    /* gold */
+            100% { border-color: #ff8c00; box-shadow: 0 0 60px #ff8c00; }   /* back to orange */
+        }
+
+        /* ===== CONTENT WRAPPER ===== */
+        .content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 5%;
+            background: rgba(11, 28, 45, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(198, 168, 92, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #C6A85C;
+            box-shadow: 0 0 20px rgba(198, 168, 92, 0.5);
+            transition: 0.3s;
+            animation: subtleGlow 3s infinite alternate;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+            border-color: #00BFFF;
+            box-shadow: 0 0 30px #00BFFF;
+        }
+
+        @keyframes subtleGlow {
+            from { filter: drop-shadow(0 0 5px #C6A85C); }
+            to { filter: drop-shadow(0 0 15px #00BFFF); }
+        }
+
+        .logo-container span {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #C6A85C, #00BFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #F5F7FA;
+            font-weight: 500;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, #C6A85C, #00BFFF);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #C6A85C;
+            text-shadow: 0 0 10px rgba(198, 168, 92, 0.5);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 5% 50px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #C6A85C, #00BFFF, #ff4d4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: titleGlow 5s infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            0% { filter: drop-shadow(0 0 5px #ff8c00); }
+            33% { filter: drop-shadow(0 0 15px #00BFFF); }
+            66% { filter: drop-shadow(0 0 10px #ff4d4d); }
+            100% { filter: drop-shadow(0 0 5px #C6A85C); }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            color: #94A3B8;
+            margin-bottom: 40px;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+
+        /* ===== BUTTON STYLES ===== */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            background: linear-gradient(135deg, #00BFFF, #C6A85C);
+            color: #0B1C2D;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+            animation: btnGlow 3s infinite alternate;
+        }
+
+        @keyframes btnGlow {
+            from { box-shadow: 0 0 20px #00BFFF; }
+            to { box-shadow: 0 0 40px #C6A85C; }
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: linear-gradient(135deg, #C6A85C, #ff4d4d);
+            box-shadow: 0 0 50px #ff4d4d;
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: #C6A85C;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px rgba(198, 168, 92, 0.5);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00BFFF, #C6A85C, #ff4d4d);
+            border-radius: 2px;
+            animation: lineGlow 4s infinite alternate;
+        }
+
+        @keyframes lineGlow {
+            0% { width: 60px; filter: drop-shadow(0 0 2px #00BFFF); }
+            100% { width: 120px; filter: drop-shadow(0 0 10px #ff4d4d); }
+        }
+
+        /* ===== CARDS GRID ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(31, 46, 61, 0.4);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 191, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.3);
+            animation: cardBorderGlow 3s infinite alternate;
+        }
+
+        @keyframes cardBorderGlow {
+            0% { border-color: rgba(255, 140, 0, 0.5); }
+            33% { border-color: rgba(0, 191, 255, 0.8); }
+            66% { border-color: rgba(255, 77, 77, 0.6); }
+            100% { border-color: rgba(198, 168, 92, 0.7); }
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #C6A85C;
+        }
+
+        .card p {
+            color: #94A3B8;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .card .btn {
+            margin-top: 15px;
+            padding: 10px 25px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SERVICE ITEMS ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-item {
+            background: rgba(31, 46, 61, 0.3);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(198, 168, 92, 0.2);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .service-item:hover {
+            border-color: #00BFFF;
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .service-item h4 {
+            font-size: 1.4rem;
+            color: #00BFFF;
+            margin-bottom: 15px;
+        }
+
+        .service-item .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #C6A85C;
+            margin: 15px 0;
+            text-shadow: 0 0 10px rgba(198, 168, 92, 0.5);
+        }
+
+        /* ===== AGENT OPPORTUNITY ===== */
+        .opportunity {
+            background: rgba(0, 191, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(198, 168, 92, 0.3);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .opportunity h3 {
+            font-size: 2.2rem;
+            color: #C6A85C;
+            margin-bottom: 20px;
+        }
+
+        .opportunity p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #94A3B8;
+            font-size: 1.2rem;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #C6A85C, #00BFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            color: #94A3B8;
+            margin-bottom: 40px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            background: rgba(8, 18, 29, 0.9);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(198, 168, 92, 0.2);
+            color: #94A3B8;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .logo-container span {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <h1><a href="index.html" aria-label="THYNK UNLIMITED home">THYNK UNLIMITED</a></h1>
-
-    <div class="nav-links" role="navigation" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="agents.html">Agents</a>
-      <a href="contact.html">Contact</a>
-      <a href="application.html">Apply</a>
-      <a href="terms.html">Terms</a>
+    <!-- Animated glowing rings (same as login page) -->
+    <div class="background-rings">
+        <i></i>
+        <i></i>
+        <i></i>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <header class="hero" role="banner" aria-labelledby="hero-title">
-    <h2 id="hero-title">THINK BEYOND LIMITS</h2>
-    <p>Technology • Creativity • Digital Income • Innovation</p>
-    <!-- FIXED: now using clean <a> link (no JavaScript needed) -->
-    <a class="btn" href="application.html" role="button" aria-label="Enroll now — join THYNK UNLIMITED">APPLY NOW</a>
-  </header>
+    <!-- Fixed Navigation with Logo/PFP -->
+    <nav>
+        <div class="logo-container">
+            <img src="https://i.imgur.com/bGFqRoO.png" alt="ANICADE Tech Logo" 
+                 onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiByPSIyNSIgZmlsbD0iI0M2QTg1QyIvPjx0ZXh0IHg9IjI1IiB5PSIzNSIgZm9udC1zaXplPSIyMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzBCMUMyRCIgZm9udC1mYW1pbHk9IkFyaWFsIj5BPC90ZXh0Pjwvc3ZnPg==';"> <!-- Fallback if Imgur fails -->
+            <span>ANICADE TECH</span>
+        </div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#opportunity">Agents</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#start">Start</a></li>
+        </ul>
+    </nav>
 
-  <!-- ABOUT -->
-  <section aria-labelledby="about-title">
-    <h2 id="about-title" class="section-title">WHO WE ARE</h2>
-    <p style="text-align:center; max-width:900px; margin:auto;">
-      THYNK UNLIMITED is a digital innovation hub focused on empowering creators,
-      businesses and agents through technology, automation, advertising and
-      income-generating digital services.
-    </p>
-  </section>
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1><span>THINK</span> BEYOND LIMITS</h1>
+            <p>Technology • Creativity • Digital Income • Innovation</p>
+            <a href="#" class="btn">APPLY NOW</a>
+        </section>
 
-  <!-- SERVICES -->
-  <section aria-labelledby="services-title">
-    <h2 id="services-title" class="section-title">CORE SERVICES</h2>
+        <!-- Who We Are -->
+        <section id="about">
+            <h2 class="section-title">WHO WE ARE</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>ANICADE TECH</h3>
+                    <p>A digital innovation hub focused on empowering creators, businesses and agents through technology, automation, advertising and income-generating digital services.</p>
+                </div>
+            </div>
+        </section>
 
-    <div class="grid">
-      <a class="card" href="services.html" aria-label="Premium Mod Apps — view services">
-        <h3>Premium Mod Apps</h3>
-        <p>K100 – K150 fast delivery.</p>
-      </a>
+        <!-- Core Services -->
+        <section id="services">
+            <h2 class="section-title">CORE SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>Web Development</h4>
+                    <p>Custom websites and web applications</p>
+                    <div class="price">From $499</div>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <h4>Digital Strategy</h4>
+                    <p>Brand identity and market positioning</p>
+                    <div class="price">From $299</div>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <h4>AI Integration</h4>
+                    <p>Automated workflows and smart solutions</p>
+                    <div class="price">From $799</div>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+                <div class="service-item">
+                    <h4>Technical Support</h4>
+                    <p>24/7 maintenance and security</p>
+                    <div class="price">$99/mo</div>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
 
-      <a class="card" href="services.html" aria-label="Advertising — view services">
-        <h3>Advertising</h3>
-        <p>K150 per 24hr promotion.</p>
-      </a>
+        <!-- Agent Opportunity -->
+        <section id="opportunity">
+            <div class="opportunity">
+                <h3>AGENT OPPORTUNITY</h3>
+                <p>Join our elite network of digital agents delivering web, branding, and technical services across Africa. Earn while you learn and scale with us.</p>
+                <a href="#" class="btn">Become an Agent</a>
+            </div>
+        </section>
 
-      <a class="card" href="services.html" aria-label="Web Development — view services">
-        <h3>Web Development</h3>
-        <p>Business & personal websites.</p>
-      </a>
+        <!-- Our Vision -->
+        <section id="vision">
+            <h2 class="section-title">OUR VISION</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <p>To build Africa's most powerful digital income and innovation ecosystem where skills, creativity and technology create limitless opportunities.</p>
+                </div>
+            </div>
+        </section>
 
-      <a class="card" href="services.html" aria-label="AI Automation — view services">
-        <h3>AI Automation</h3>
-        <p>Chatbots, content systems & workflows.</p>
-      </a>
-
-      <a class="card" href="services.html" aria-label="Branding — view services">
-        <h3>Branding</h3>
-        <p>Logos, digital identity & creator setups.</p>
-      </a>
-
-      <a class="card" href="agents.html" aria-label="Agent Program — learn about agent program">
-        <h3>Agent Program</h3>
-        <p>Earn 15% commission per sale.</p>
-      </a>
+        <!-- Call to Action -->
+        <section id="start" class="cta">
+            <h2>READY TO START?</h2>
+            <p>Join the next generation of digital earners.</p>
+            <a href="#" class="btn">GET STARTED</a>
+        </section>
     </div>
-  </section>
 
-  <!-- AGENT SYSTEM -->
-  <section aria-labelledby="agent-title">
-    <h2 id="agent-title" class="section-title">AGENT OPPORTUNITY</h2>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 ANICADE TECH. All Rights Reserved. | Innovate. Create. Earn.</p>
+    </footer>
 
-    <div class="grid">
-      <a class="card" href="agents.html" aria-label="15% Commission — agents">
-        <h3>15% Commission</h3>
-        <p>Earn on every successful sale.</p>
-      </a>
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
 
-      <a class="card" href="agents.html" aria-label="Remote Work — agents">
-        <h3>Remote Work</h3>
-        <p>Sell using your phone from anywhere.</p>
-      </a>
+        // Optional: Add active state to nav based on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-      <a class="card" href="agents.html" aria-label="Daily Income — agents">
-        <h3>Daily Income</h3>
-        <p>Fast-moving digital products.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- VISION -->
-  <section aria-labelledby="vision-title">
-    <h2 id="vision-title" class="section-title">OUR VISION</h2>
-    <p style="text-align:center; max-width:900px; margin:auto;">
-      To build Africa’s most powerful digital income and innovation ecosystem
-      where skills, creativity and technology create limitless opportunities.
-    </p>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta" aria-labelledby="cta-title">
-    <h2 id="cta-title">READY TO START?</h2>
-    <p>Join the next generation of digital earners.</p>
-    <br>
-    <a class="btn" href="application.html" role="button" aria-label="Get started — apply now">GET STARTED</a>
-  </section>
-
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <p>© 2026 THYNK UNLIMITED — All Rights Reserved</p>
-    <p><a href="terms.html">Terms of Service</a> · <a href="contact.html">Contact</a></p>
-  </footer>
-
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = '#00BFFF';
+                    link.style.textShadow = '0 0 10px #00BFFF';
+                } else {
+                    link.style.color = '';
+                    link.style.textShadow = '';
+                }
+            });
+        });
+    </script>
 </body>
-  </html>
+</html>
