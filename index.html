@@ -337,6 +337,9 @@
             transition: box-shadow 0.2s, transform 0.2s;
             width: 100%;
             box-shadow: 0 3px 12px rgba(37, 211, 102, 0.18);
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
         .whatsapp-btn:hover {
             transform: translateY(-1px);
@@ -448,57 +451,57 @@
             <div class="contact-badge">
                 <div class="badge-item">CONTACT</div>
                 <div class="badge-item">📱 <strong>+260 777 083 995</strong></div>
-                <div class="badge-item">📧 <strong>anicadetech@gmail.com</strong></div>
+                <div class="badge-item">📧 <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d1c13141e1c191809181e153d1a101c1411531e1210">[email&#160;protected]</a></strong></div>
             </div>
         </section>
 
         <h2 id="website" class="section-title fade-in">🌐 &nbsp;Website & Digital Presence</h2>
         <div class="services-grid">
-            <div class="service-card fade-in"><div class="category-badge">Basic</div><div class="service-header"><h3>Basic Website</h3><div class="price">K1,500</div></div><div class="service-desc">Simple website for small businesses and startups</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Business</div><div class="service-header"><h3>Standard Business Website</h3><div class="price">K3,000</div></div><div class="service-desc">Multi-page professional website with CMS</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">E-commerce</div><div class="service-header"><h3>E-commerce Store</h3><div class="price">K4,500</div></div><div class="service-desc">Full online store with payment integration</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Portfolio</div><div class="service-header"><h3>Portfolio Website</h3><div class="price">K1,750</div></div><div class="service-desc">Showcase your work professionally</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Redesign</div><div class="service-header"><h3>Website Redesign</h3><div class="price">K1,250</div></div><div class="service-desc">Modernize your existing website</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Maintenance</div><div class="service-header"><h3>Website Maintenance</h3><div class="price">K625 <small>/mo</small></div></div><div class="service-desc">Monthly updates, security, backups</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Setup</div><div class="service-header"><h3>Domain + Hosting Setup</h3><div class="price">K375</div></div><div class="service-desc">One-time setup and configuration</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Basic</div><div class="service-header"><h3>Basic Website</h3><div class="price">K1,500</div></div><div class="service-desc">Simple website for small businesses and startups</div><a href="#" class="whatsapp-btn" onclick="openWA('Basic Website','K1,500');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Business</div><div class="service-header"><h3>Standard Business Website</h3><div class="price">K3,000</div></div><div class="service-desc">Multi-page professional website with CMS</div><a href="#" class="whatsapp-btn" onclick="openWA('Standard Business Website','K3,000');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">E-commerce</div><div class="service-header"><h3>E-commerce Store</h3><div class="price">K4,500</div></div><div class="service-desc">Full online store with payment integration</div><a href="#" class="whatsapp-btn" onclick="openWA('E-commerce Store','K4,500');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Portfolio</div><div class="service-header"><h3>Portfolio Website</h3><div class="price">K1,750</div></div><div class="service-desc">Showcase your work professionally</div><a href="#" class="whatsapp-btn" onclick="openWA('Portfolio Website','K1,750');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Redesign</div><div class="service-header"><h3>Website Redesign</h3><div class="price">K1,250</div></div><div class="service-desc">Modernize your existing website</div><a href="#" class="whatsapp-btn" onclick="openWA('Website Redesign','K1,250');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Maintenance</div><div class="service-header"><h3>Website Maintenance</h3><div class="price">K625 <small>/mo</small></div></div><div class="service-desc">Monthly updates, security, backups</div><a href="#" class="whatsapp-btn" onclick="openWA('Website Maintenance','K625 /mo');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Setup</div><div class="service-header"><h3>Domain + Hosting Setup</h3><div class="price">K375</div></div><div class="service-desc">One-time setup and configuration</div><a href="#" class="whatsapp-btn" onclick="openWA('Domain + Hosting Setup','K375');return false;" target="_blank">📱 Get via WhatsApp</a></div>
         </div>
 
         <h2 id="advertising" class="section-title fade-in">📢 &nbsp;Advertising & Promotion</h2>
         <div class="services-grid">
-            <div class="service-card fade-in"><div class="category-badge">Ads</div><div class="service-header"><h3>24-hour Advertising Slot</h3><div class="price">K150</div></div><div class="service-desc">Premium placement for 24 hours</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Creative</div><div class="service-header"><h3>Ad Creative Design</h3><div class="price">K375</div></div><div class="service-desc">Professional graphics and copy</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Setup</div><div class="service-header"><h3>Ads Account Setup</h3><div class="price">K500</div></div><div class="service-desc">Facebook/Google Ads configuration</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Landing Page</div><div class="service-header"><h3>Landing Page for Ads</h3><div class="price">K875</div></div><div class="service-desc">High-converting landing page</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Funnel</div><div class="service-header"><h3>Sales Funnel Setup</h3><div class="price">K1,500</div></div><div class="service-desc">Complete funnel from ad to sale</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Management</div><div class="service-header"><h3>Monthly Ads Management</h3><div class="price">K1,250 <small>/mo</small></div></div><div class="service-desc">Ongoing campaign optimization</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Ads</div><div class="service-header"><h3>24-hour Advertising Slot</h3><div class="price">K150</div></div><div class="service-desc">Premium placement for 24 hours</div><a href="#" class="whatsapp-btn" onclick="openWA('24-hour Advertising Slot','K150');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Creative</div><div class="service-header"><h3>Ad Creative Design</h3><div class="price">K375</div></div><div class="service-desc">Professional graphics and copy</div><a href="#" class="whatsapp-btn" onclick="openWA('Ad Creative Design','K375');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Setup</div><div class="service-header"><h3>Ads Account Setup</h3><div class="price">K500</div></div><div class="service-desc">Facebook/Google Ads configuration</div><a href="#" class="whatsapp-btn" onclick="openWA('Ads Account Setup','K500');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Landing Page</div><div class="service-header"><h3>Landing Page for Ads</h3><div class="price">K875</div></div><div class="service-desc">High-converting landing page</div><a href="#" class="whatsapp-btn" onclick="openWA('Landing Page for Ads','K875');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Funnel</div><div class="service-header"><h3>Sales Funnel Setup</h3><div class="price">K1,500</div></div><div class="service-desc">Complete funnel from ad to sale</div><a href="#" class="whatsapp-btn" onclick="openWA('Sales Funnel Setup','K1,500');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Management</div><div class="service-header"><h3>Monthly Ads Management</h3><div class="price">K1,250 <small>/mo</small></div></div><div class="service-desc">Ongoing campaign optimization</div><a href="#" class="whatsapp-btn" onclick="openWA('Monthly Ads Management','K1,250 /mo');return false;" target="_blank">📱 Get via WhatsApp</a></div>
         </div>
 
         <h2 id="premium" class="section-title fade-in">📲 &nbsp;Lifetime Premium Digital Products</h2>
         <div class="services-grid">
-            <div class="service-card fade-in"><div class="category-badge">Apps</div><div class="service-header"><h3>Lifetime Premium Apps</h3><div class="price">K100–150</div></div><div class="service-desc">Per app, lifetime access</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Library</div><div class="service-header"><h3>Private Premium App Library</h3><div class="price">K200</div></div><div class="service-desc">Access to ALL premium apps</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Mods</div><div class="service-header"><h3>Mod App Configuration</h3><div class="price">K250</div></div><div class="service-desc">Custom mod setup</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Ad-Free</div><div class="service-header"><h3>Ad-Free App Optimization</h3><div class="price">K150</div></div><div class="service-desc">Remove ads from your apps</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Support</div><div class="service-header"><h3>App Support & Updates</h3><div class="price">K100 <small>/mo</small></div></div><div class="service-desc">Monthly maintenance</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Apps</div><div class="service-header"><h3>Lifetime Premium Apps</h3><div class="price">K100–150</div></div><div class="service-desc">Per app, lifetime access</div><a href="#" class="whatsapp-btn" onclick="openWA('Lifetime Premium Apps','K100–150');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Library</div><div class="service-header"><h3>Private Premium App Library</h3><div class="price">K200</div></div><div class="service-desc">Access to ALL premium apps</div><a href="#" class="whatsapp-btn" onclick="openWA('Private Premium App Library','K200');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Mods</div><div class="service-header"><h3>Mod App Configuration</h3><div class="price">K250</div></div><div class="service-desc">Custom mod setup</div><a href="#" class="whatsapp-btn" onclick="openWA('Mod App Configuration','K250');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Ad-Free</div><div class="service-header"><h3>Ad-Free App Optimization</h3><div class="price">K150</div></div><div class="service-desc">Remove ads from your apps</div><a href="#" class="whatsapp-btn" onclick="openWA('Ad-Free App Optimization','K150');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Support</div><div class="service-header"><h3>App Support & Updates</h3><div class="price">K100 <small>/mo</small></div></div><div class="service-desc">Monthly maintenance</div><a href="#" class="whatsapp-btn" onclick="openWA('App Support & Updates','K100 /mo');return false;" target="_blank">📱 Get via WhatsApp</a></div>
         </div>
 
         <h2 id="design" class="section-title fade-in">🎨 &nbsp;Design & Branding</h2>
         <div class="services-grid">
-            <div class="service-card fade-in"><div class="category-badge">Logo</div><div class="service-header"><h3>Logo Design</h3><div class="price">K375</div></div><div class="service-desc">Professional logo with 3 concepts</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Brand Identity</div><div class="service-header"><h3>Full Brand Identity Kit</h3><div class="price">K1,125</div></div><div class="service-desc">Logo, colors, fonts, business cards</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Product</div><div class="service-header"><h3>Digital Product Setup</h3><div class="price">K875</div></div><div class="service-desc">Your product ready for market</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Image Pack</div><div class="service-header"><h3>Image Design Pack</h3><div class="price">K100</div></div><div class="service-desc">5 custom designs</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Social</div><div class="service-header"><h3>Social Media Graphics</h3><div class="price">K375</div></div><div class="service-desc">5 social media posts</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Custom</div><div class="service-header"><h3>Custom Visual Graphics</h3><div class="price">K500</div></div><div class="service-desc">Bespoke graphics for any need</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Logo</div><div class="service-header"><h3>Logo Design</h3><div class="price">K375</div></div><div class="service-desc">Professional logo with 3 concepts</div><a href="#" class="whatsapp-btn" onclick="openWA('Logo Design','K375');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Brand Identity</div><div class="service-header"><h3>Full Brand Identity Kit</h3><div class="price">K1,125</div></div><div class="service-desc">Logo, colors, fonts, business cards</div><a href="#" class="whatsapp-btn" onclick="openWA('Full Brand Identity Kit','K1,125');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Product</div><div class="service-header"><h3>Digital Product Setup</h3><div class="price">K875</div></div><div class="service-desc">Your product ready for market</div><a href="#" class="whatsapp-btn" onclick="openWA('Digital Product Setup','K875');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Image Pack</div><div class="service-header"><h3>Image Design Pack</h3><div class="price">K100</div></div><div class="service-desc">5 custom designs</div><a href="#" class="whatsapp-btn" onclick="openWA('Image Design Pack','K100');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Social</div><div class="service-header"><h3>Social Media Graphics</h3><div class="price">K375</div></div><div class="service-desc">5 social media posts</div><a href="#" class="whatsapp-btn" onclick="openWA('Social Media Graphics','K375');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Custom</div><div class="service-header"><h3>Custom Visual Graphics</h3><div class="price">K500</div></div><div class="service-desc">Bespoke graphics for any need</div><a href="#" class="whatsapp-btn" onclick="openWA('Custom Visual Graphics','K500');return false;" target="_blank">📱 Get via WhatsApp</a></div>
         </div>
 
         <h2 id="ai" class="section-title fade-in">🤖 &nbsp;AI & Automation Services</h2>
         <div class="services-grid">
-            <div class="service-card fade-in"><div class="category-badge">Chatbot</div><div class="service-header"><h3>AI Chatbot for Business</h3><div class="price">K1,250</div></div><div class="service-desc">24/7 customer support bot</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Automation</div><div class="service-header"><h3>Social Media Automation</h3><div class="price">K875</div></div><div class="service-desc">Auto-post across platforms</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Content</div><div class="service-header"><h3>AI Content System Setup</h3><div class="price">K750</div></div><div class="service-desc">Automated content generation</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Workflow</div><div class="service-header"><h3>Workflow Automation</h3><div class="price">K1,000</div></div><div class="service-desc">Connect your apps automatically</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
-            <div class="service-card fade-in"><div class="category-badge">Analytics</div><div class="service-header"><h3>Analytics & Reporting Dashboard</h3><div class="price">K875</div></div><div class="service-desc">Real-time business insights</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Chatbot</div><div class="service-header"><h3>AI Chatbot for Business</h3><div class="price">K1,250</div></div><div class="service-desc">24/7 customer support bot</div><a href="#" class="whatsapp-btn" onclick="openWA('AI Chatbot for Business','K1,250');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Automation</div><div class="service-header"><h3>Social Media Automation</h3><div class="price">K875</div></div><div class="service-desc">Auto-post across platforms</div><a href="#" class="whatsapp-btn" onclick="openWA('Social Media Automation','K875');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Content</div><div class="service-header"><h3>AI Content System Setup</h3><div class="price">K750</div></div><div class="service-desc">Automated content generation</div><a href="#" class="whatsapp-btn" onclick="openWA('AI Content System Setup','K750');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Workflow</div><div class="service-header"><h3>Workflow Automation</h3><div class="price">K1,000</div></div><div class="service-desc">Connect your apps automatically</div><a href="#" class="whatsapp-btn" onclick="openWA('Workflow Automation','K1,000');return false;" target="_blank">📱 Get via WhatsApp</a></div>
+            <div class="service-card fade-in"><div class="category-badge">Analytics</div><div class="service-header"><h3>Analytics & Reporting Dashboard</h3><div class="price">K875</div></div><div class="service-desc">Real-time business insights</div><a href="#" class="whatsapp-btn" onclick="openWA('Analytics & Reporting Dashboard','K875');return false;" target="_blank">📱 Get via WhatsApp</a></div>
         </div>
 
         <h2 id="agent" class="section-title fade-in">🧠 &nbsp;Agent & Income System</h2>
@@ -513,8 +516,8 @@
 
         <h2 id="bundles" class="section-title fade-in">📦 &nbsp;Bundle Packages</h2>
         <div class="services-grid">
-            <div class="service-card fade-in"><div class="category-badge save-badge">🔥 Save K50</div><div class="service-header"><h3>Starter Web + Ads</h3><div class="price">K1,600</div></div><div class="service-desc">Basic Website + 24hr Advertising</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get Bundle</a></div>
-            <div class="service-card fade-in"><div class="category-badge save-badge">🔥 Save K175</div><div class="service-header"><h3>Creator Starter Pack</h3><div class="price">K800</div></div><div class="service-desc">Image Design (5) + Logo + Premium App</div><a href="https://wa.me/message/D3GSC6P7RORZD1" class="whatsapp-btn" target="_blank">📱 Get Bundle</a></div>
+            <div class="service-card fade-in"><div class="category-badge save-badge">🔥 Save K50</div><div class="service-header"><h3>Starter Web + Ads</h3><div class="price">K1,600</div></div><div class="service-desc">Basic Website + 24hr Advertising</div><a href="#" class="whatsapp-btn" onclick="openWA('Become an ANICADE Agent','Free');return false;" target="_blank">📱 Get Bundle</a></div>
+            <div class="service-card fade-in"><div class="category-badge save-badge">🔥 Save K175</div><div class="service-header"><h3>Creator Starter Pack</h3><div class="price">K800</div></div><div class="service-desc">Image Design (5) + Logo + Premium App</div><a href="#" class="whatsapp-btn" onclick="openWA('Creator Starter Pack','K800');return false;" target="_blank">📱 Get Bundle</a></div>
         </div>
 
         <footer>
@@ -522,7 +525,7 @@
             <div class="footer-info">
                 <div>📍 Kabwe, Zambia</div>
                 <div>📱 +260 777 083 995</div>
-                <div>📧 anicadetech@gmail.com</div>
+                <div>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="70111e19131114150415131830171d11191c5e131f1d">[email&#160;protected]</a></div>
             </div>
             <div class="footer-divider"></div>
             <p>© 2026 ANICADE TECH. Professional tech solutions.</p>
@@ -531,7 +534,7 @@
 
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 e.preventDefault();
@@ -551,10 +554,19 @@
 
         document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
     </script>
+
+<script>
+function openWA(service, price) {
+    var pageUrl = 'https://tresforwrld.github.io/ANICADEtech.net/';
+    var msg = 'Hi ANICADE TECH! 👋\n\nI\'d like to enquire about:\n*' + service + '*\nPrice: ' + price + '\n\nPlease get back to me.\n\n' + pageUrl;
+    window.open('https://wa.me/260777083995?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
 <div style="position:fixed;bottom:16px;left:0;right:0;text-align:center;z-index:9999;display:flex;justify-content:center;gap:18px;flex-wrap:wrap;">
-    <a href="terms.html" style="color:rgba(148,163,184,0.5);font-family:'Segoe UI',sans-serif;font-size:12px;text-decoration:none;font-weight:600;letter-spacing:0.5px;">Terms of Service</a>
-    <span style="color:rgba(255,255,255,0.15);font-size:12px;">·</span>
-    <a href="terms.html#privacy" style="color:rgba(148,163,184,0.5);font-family:'Segoe UI',sans-serif;font-size:12px;text-decoration:none;font-weight:600;letter-spacing:0.5px;">Privacy Policy</a>
+    <a href="terms.html" style="color:rgba(148,163,184,0.5);font-family:'Segoe UI',sans-serif;font-size:12px;text-decoration:none;font-weight:600;letter-spacing:.5px">Terms of Use</a>
+    <span style="color:rgba(255,255,255,0.15);font-size:12px">·</span>
+    <a href="terms.html#privacy" style="color:rgba(148,163,184,0.5);font-family:'Segoe UI',sans-serif;font-size:12px;text-decoration:none;font-weight:600;letter-spacing:.5px">Privacy Policy</a>
 </div>
+
 </body>
 </html>
